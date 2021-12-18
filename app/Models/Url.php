@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Url extends Model
+class Url extends Model 
 {
     //use HasFactory;
     protected $fillable = ['original_url','shortner_url'];
@@ -18,5 +18,10 @@ class Url extends Model
         static::creating(function($url){
             $url->shortner_url = Str::random();
         });
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'shortner_url';
     }
 }
