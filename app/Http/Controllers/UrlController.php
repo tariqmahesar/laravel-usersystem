@@ -56,7 +56,7 @@ class UrlController extends Controller
      */
     public function show(Url $url)
     {
-       
+       return $url;
     }
 
     /**
